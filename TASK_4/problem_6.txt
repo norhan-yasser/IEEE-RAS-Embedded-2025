@@ -1,0 +1,39 @@
+
+
+int a=7;
+int *aptr = &a;
+
+printf( "The address of a is %p\nThe value of aPtr is %p\n\n", &a, aptr );
+printf( "The value of a is %d\nThe value of *aPtr is %d\n\n", a, *aptr);
+printf( "Showing that * and & are complements of each other\n");
+printf("&*aptr = %p\n*&ptr = %p\n", &*aptr,*&aptr);
+
+
+output:
+
+The address of a is 0012FF7C
+The value of aPtr is 0012FF7C
+
+The value of a is 7
+The value of *aPtr is 7
+
+Showing that * and & are complements of each other
+&*aPtr = 0012FF7C
+*&aPtr = 0012FF7C
+
+This C code demonstrates the use of pointers and shows how the * (dereference) and & (address-of) operators work as complements.
+
+
+int a = 7; Declare an integer.
+
+
+int *aptr = &a;  to Create a pointer aptr that stores the address of a.
+
+
+*aptr : Dereferences the pointer to get the value of a (which is 7).
+
+
+&a and aptr : Both give the same memory address.
+
+
+&*aptr and *&aptr : Both return aptr, showing that & and * cancel each other.
