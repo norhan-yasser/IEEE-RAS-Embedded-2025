@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1746976103 source:h:\ras ieee\ieee-ras-embedded-2025\task_8\problem_6\main.c
+	<stdio.h>
+	"math.h"
+
+1746976304 h:\ras ieee\ieee-ras-embedded-2025\task_8\problem_6\math.h
+
+1746976333 source:h:\ras ieee\ieee-ras-embedded-2025\task_8\problem_6\math.c
+	<stdio.h>
+	"math.h"
+
