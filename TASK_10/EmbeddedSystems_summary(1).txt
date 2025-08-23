@@ -1,0 +1,210 @@
+**Embedded Systems Definitions ans design**
+
+     1. Definition of Embedded Systems :
+
+An Embedded System is a*specialized computer system that is designed to perform a specific function or a limited set of functions, 
+often in real-time, within a larger mechanical or electrical system.
+
+
+              * Unlike general-purpose computers (PCs, laptops), embedded systems are *application-specific.
+
+              * They are usually small, efficient, and resource-constrained (limited memory, power, and processing).
+
+              *  Found in *everyday devices : smartphones, washing machines, cars, industrial robots, medical equipment.
+
+    2. Characteristics of Embedded Systems :
+      *Dedicated Functionality ? performs one task (e.g., washing machine controller).
+
+      *Resource Constraints? limited memory, storage, and power.
+
+      *Reliability & Stability ? must work continuously without failure.
+
+      *Low Power Consumption ? essential for battery-powered devices.
+
+      *Compact Size ? integrated on microcontrollers or SoCs (System on Chip).
+
+
+    3. *Basic Components of an Embedded System*
+1. Hardware:
+
+  
+ * Processor : (Microprocessor or Microcontroller).
+  
+ * Memory :(RAM, ROM, Flash).
+   
+ * I/O Interfaces :(sensors, actuators, displays).
+  
+ * Communication Interfaces : (UART, SPI, I²C, CAN, etc.).
+
+2. Software:
+
+   
+ * Firmware : (program running on the embedded device).
+   
+ * Real-Time Operating System (RTOS)* (for multitasking & scheduling).
+   
+ * Drivers & Middleware:(connect hardware with applications).
+
+
+
+**Processor Building Blocks**
+A microprocessor is the  central processing unit (CPU) of a computer built on a single integrated circuit (IC) chip.
+
+1.Arithmetic Logic Unit (ALU)
+The *“calculator”* of the processor.
+* Performs:
+
+
+ * Arithmetic operations* ? addition, subtraction, multiplication, division.
+ 
+ * Logical operations* ? AND, OR, NOT, XOR, comparisons (<, >, =).
+
+ * Works directly with registers for high-speed operations.
+
+
+2. Control Unit (CU)
+ Functions:
+
+  
+ * Fetches instructions from memory.
+ 
+ * Decodes instructions into control signals.
+
+ * Directs ALU, registers, and buses to perform operations.
+
+ * Ensures instructions are executed in the correct order.
+
+
+3. Registers 
+    Small, fast memory inside the CPU.
+
+* Hold data, instructions, and addresses temporarily.
+
+* Types of registers:
+
+
+       * *Accumulator (ACC)* ? holds results of ALU operations.
+ 
+       * *Program Counter (PC)* ? holds the address of the next instruction.
+  
+       * *Instruction Register (IR)* ? stores current instruction being executed.
+  
+       * *Stack Pointer (SP)* ? points to top of stack in memory.
+
+       * *General Purpose Registers* (R0, R1, etc.) ? temporary storage for variables.
+
+4. *System Buses
+Buses are the *communication highways* that transfer data/signals between CPU, memory, and peripherals.
+
+
+ *Data Bus* ? carries actual data (e.g., numbers, instructions).
+
+ *Address Bus* ? carries memory or I/O addresses.
+
+ *Control Bus* ? carries control signals (read, write, clock, interrupts).
+
+
+5. Instruction Decoder
+ Part of the Control Unit,Converts binary instructions (machine code) into signals that control ALU, registers, and buses.
+
+
+
+**Register Types**
+
+Registers are tiny, high-speed storage locations inside the CPU.
+They are used to hold data, instructions, and addresses temporarily during program execution.
+They are faster than cache and RAM because they are directly inside the processor
+
+Types of Registers in a Processor:
+
+1. Accumulator (ACC) 
+? Holds data currently being processed by the ALU, Stores results of arithmetic and logic operations.
+2. Program Counter (PC) ? Holds the address of the next instruction to be executed
+3. Instruction Register (IR) ? Holds the current instruction fetched from memory. 
+4. Memory Address Register (MAR) ? Holds the address of the memory location that the CPU wants to read from or write to.
+
+5.Memory Data Register (MDR) / Memory Buffer Register (MBR) ?Holds the actual data being transferred to or from memory.
+
+6.Stack Pointer (SP) ? Points to the top of the stack in memory.
+
+7. Status Register / Flag Register (FR) ? Holds flags that reflect the outcome of operations in the ALU.
+
+8. General Purpose Registers (GPRs ) ? Used for temporary storage of data and intermediate results.
+ Examples:
+
+ Intel x86 ? AX, BX, CX, DX.
+  *ARM ? R0–R12."that we will be using in embedded mainly "
+
+
+**Instruction Life Cycle**
+
+
+
+The CPU follows a repetitive cycle of fetching, decoding, executing, and sometimes storing instructions until the program ends.
+
+ 1.Fetch
+        The CPU fetches the next instruction from memory.
+ 
+        The Program Counter (PC) holds the address of the instruction.
+
+        That address is sent to the *Memory Address Register (MAR).
+        The instruction at that memory location is fetched into the Instruction Register (IR).
+        
+ After fetching, the PC is incremented to point to the next instruction.
+
+
+
+2. Decode
+         The CPU’s Control Unit (CU) decodes the fetched instruction.
+ 
+          Decoding means converting the binary opcode into signals that control ALU, registers, and I/O.
+
+          The CU determines:
+
+ What operation to perform (add, move, jump, etc.).
+  
+                                           Which operands (data) are needed.
+  
+                                           Where to find the operands (registers or memory). 
+
+3. Execute
+ The CPU executes the decoded instruction using the ALU, registers, and buses.
+
+ 4. Store (Write Back) If the instruction produces a result, it is stored back into memory or a register.
+
+
+
+
+
+**Memory Types**
+
+memory is the part of a computer system that is used to store data and instructions.
+It allows the processor (CPU or microcontroller) to remember information temporarily or permanently while performing tasks.
+
+ 1.  Non-volatile  memory  ( Read-Only Memory (ROM) ) ? data is retained when power is off.
+
+ Used for firmware (permanent program code) that rarely changes.
+     Types:
+
+  
+          Mask ROM ? program burned at chip fabrication; cannot be changed,Used in cheap mass-produced devices.
+                      PROM/EPROM/EEPROM ? can be programmed (one-time or reprogrammed).
+  
+          Flash Memory? most common in embedded systems for program storage.
+
+2.  Volatile  memory (Random Access Memory (RAM))  ? data lost when power is off.
+
+ Used for temporary storage of variables, sensor data, buffers, and stack.
+
+
+    Types:
+
+
+          SRAM (Static RAM):  Faster, lower power, but more expensive/ Commonly used ason-chip RAM in microcontrollers.
+          DRAM (Dynamic RAM):Higher density, cheaper, but slower and needs refres. Used in complex embedded                                                 systems like smartphones, tablets.
+
+3. Hybrid memory  
+ex: NVRAM 
+ Non-volatile like Flash, but faster and lower power.
+
+ More expensive, so used in safety-critical systems.
