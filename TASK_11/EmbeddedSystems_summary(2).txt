@@ -1,0 +1,190 @@
+Microcontroller Unit (MCU) .  
+    Overview of 
+    -   A Microcontroller Unit is a compact chip that integrates:
+        
+        -   Processor (CPU)
+      
+        -   Memory (Flash, RAM)
+       
+        -   Peripherals (I/O, timers, communication)
+   
+        -   Designed for embedded control tasks in real-time systems.
+    
+        -   Used in robotics, appliances, automobiles, and automation systems.
+
+
+------------------------------------------------------------------------
+
+
+2.  MCU Architecture
+    
+  -   CPU Core – Executes instructions.
+  
+  -   Memory – Flash for program storage, SRAM for runtime data.
+   
+  -   Peripherals – GPIO, timers, ADC/DAC, communication interfaces.
+    
+  -   System Bus – Connects CPU, memory, and peripherals.
+
+   
+
+
+   ** Von Neumann vs Harvard Architectures
+ **
+      -   Von Neumann Architecture:
+ 
+           *Single memory for instructions and data.
+       
+           *Simpler design but slower due to shared bus (bottleneck).
+    
+     -   Harvard Architecture:
+     
+          * Separate memories and buses for instructions and data.
+        
+          * Allows parallel fetch and execution ? faster performance.
+       
+          *Commonly used in MCUs for efficiency.
+
+
+------------------------------------------------------------------------
+
+
+3.  MCU Clock System
+    
+ -   Provides synchronization for all operations.
+    
+ -   Sources:
+        
+         -   Internal oscillators.
+       
+         -   External crystal oscillators (for accuracy).
+       
+         -   Phase-Locked Loops (PLL) to adjust frequency.
+
+
+
+------------------------------------------------------------------------
+
+
+4.  MCU Memory Mapping
+   
+       -   Concept: Each memory and peripheral is assigned a unique addres in the MCU’s address space.
+   
+       -   Regions:
+       
+                 -   Flash Memory – Non-volatile, stores program code.
+       
+                 -   SRAM – Volatile, holds variables and stack.
+       
+                 -   EEPROM/Non-volatile RAM – Stores configuration and persistent data.
+        
+                 -   Peripheral Registers – Mapped into address space, used to  configure/control peripherals.
+       
+                 -   System Control Space – Interrupt vector table, system registers.
+    
+      -   Importance:
+       
+                 -   Simplifies access (same load/store instructions used for
+  peripherals and memory).
+        
+                 -   Enables efficient integration of multiple peripherals.
+
+
+
+------------------------------------------------------------------------
+
+
+5.  MCU Bus Interfaces
+   : Buses are internal highways connecting CPU, memory, and peripherals.
+    
+     -   Internal Buses:
+        
+          -   Instruction Bus – Carries program instructions from Flash.
+       
+          -   Data Bus – Transfers data between CPU and memory.
+        
+          -   Address Bus – Carries memory/peripheral addresses.
+       
+          -   Control Bus – Carries control signals (read, write, clock, interrupts).
+   
+          -   External Communication Buses:
+        
+               -   I²C, SPI, UART – Short-distance, device-to-device
+ communication.
+        
+               -   CAN – Automotive/industrial networking.
+        
+               -   USB – Host-device communication.
+       
+               -   Ethernet – Networking and IoT applications.
+
+   
+ Bus Performance Considerations:
+   
+ -   Bandwidth (how much data can be transferred per cycle).
+ 
+ -   Latency (delay between request and data arrival).
+   
+ -   Arbitration (who controls the bus if multiple masters exist)
+
+
+.
+
+------------------------------------------------------------------------
+
+
+6.  Advanced Microcontroller Bus Architecture (AMBA)
+   :  Standard for ARM-based MCUs.
+    
+     -   Types:
+       
+                 *AHB (Advanced High-performance Bus) ? High-speed memory and  peripherals.
+        
+                 *APB (Advanced Peripheral Bus) ? Low-power, simple
+ peripherals (GPIO, timers).
+        
+                 * AXI (Advanced eXtensible Interface) ? High-bandwidth,supports multiple masters/slaves, used in advanced SoCs.
+
+
+
+------------------------------------------------------------------------
+
+
+7.  Technical Reference Manual (TRM)
+   
+ -   A TRM provides detailed documentation of the MCU’s architecture and peripherals.
+    
+-   Importance:
+      
+       -   Explains registers, bit-fields, and configuration options.
+       
+       -   Provides timing diagrams, bus protocols, and memory maps.
+        
+       -   Essential for low-level programming (drivers, bare-metal
+ coding).
+       
+       -   Complements datasheets (datasheets give overview, TRM gives
+ deep technical detail).
+
+
+------------------------------------------------------------------------
+
+
+8.  Reading MCU Datasheets & Specifications
+   
+ -   Essential for using MCUs correctly. Includes:
+      
+ -   Electrical specs (voltage, current, power).
+       
+ -   Pinout descriptions.
+        
+ -   Peripheral functions & configurations.
+        
+ -   Memory size & mapping.
+        
+ -   Timing diagrams & performance data.
+
+
+------------------------------------------------------------------------
+
+
